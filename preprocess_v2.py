@@ -72,8 +72,8 @@ if __name__ == "__main__":
         hps['train']['log_interval'] = 10
         hps['train']['eval_interval'] = 100
         hps['train']['batch_size'] = 16
-        hps['data']['training_files'] = "final_annotation_train.txt"
-        hps['data']['validation_files'] = "final_annotation_val.txt"
+        hps['data']['training_files'] = "/content/drive/MyDrive/final_annotation_train.txt"
+        hps['data']['validation_files'] = "/content/drive/MyDrive/final_annotation_val.txt"
         # save modified config
         with open("./configs/modified_finetune_speaker.json", 'w', encoding='utf-8') as f:
             json.dump(hps, f, indent=2)
@@ -99,11 +99,11 @@ if __name__ == "__main__":
         # merge with old annotation
         final_annos = cleaned_old_annos + cc_duplicate * cleaned_new_annos
         # save annotation file
-        with open("./final_annotation_train.txt", 'w', encoding='utf-8') as f:
+        with open("../drive/MyDrive/final_annotation_train.txt", 'w', encoding='utf-8') as f:
             for line in final_annos:
                 f.write(line)
         # save annotation file for validation
-        with open("./final_annotation_val.txt", 'w', encoding='utf-8') as f:
+        with open("../drive/MyDrive/final_annotation_val.txt", 'w', encoding='utf-8') as f:
             for line in cleaned_new_annos:
                 f.write(line)
         print("finished")
@@ -144,11 +144,11 @@ if __name__ == "__main__":
 
         final_annos = cleaned_new_annos
         # save annotation file
-        with open("./final_annotation_train.txt", 'w', encoding='utf-8') as f:
+        with open("/content/drive/MyDrive/final_annotation_train.txt", 'w', encoding='utf-8') as f:
             for line in final_annos:
                 f.write(line)
         # save annotation file for validation
-        with open("./final_annotation_val.txt", 'w', encoding='utf-8') as f:
+        with open("/content/drive/MyDrive/final_annotation_val.txt", 'w', encoding='utf-8') as f:
             for line in cleaned_new_annos:
                 f.write(line)
         print("finished")
