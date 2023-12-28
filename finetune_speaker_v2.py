@@ -103,6 +103,8 @@ def run(rank, n_gpus, hps):
           _, _, _, epoch_str = utils.load_checkpoint(utils.latest_checkpoint_path(hps.model_dir, "G_latest.pth"), net_g, None)
           _, _, _, epoch_str = utils.load_checkpoint(utils.latest_checkpoint_path(hps.model_dir, "D_latest.pth"), net_d, None)
           global_step = (epoch_str - 1) * len(train_loader)
+          print("gloabl", global_step)
+
       except:
           print("Failed to find latest checkpoint, loading G_0.pth...")
           if hps.train_with_pretrained_model:
