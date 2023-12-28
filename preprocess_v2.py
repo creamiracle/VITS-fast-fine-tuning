@@ -22,7 +22,7 @@ if __name__ == "__main__":
             short_character_anno = f.readlines()
             new_annos += short_character_anno
     # Source 2: transcribed long audio segments
-    if os.path.exists("./long_character_anno.txt"):
+    if os.path.exists("/content/drive/MyDrive/long_character_anno.txt"):
         with open("./long_character_anno.txt", 'r', encoding='utf-8') as f:
             long_character_anno = f.readlines()
             new_annos += long_character_anno
