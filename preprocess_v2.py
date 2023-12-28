@@ -23,7 +23,7 @@ if __name__ == "__main__":
             new_annos += short_character_anno
     # Source 2: transcribed long audio segments
     if os.path.exists("/content/drive/MyDrive/long_character_anno.txt"):
-        with open("./long_character_anno.txt", 'r', encoding='utf-8') as f:
+        with open("/content/drive/MyDrive/long_character_anno.txt", 'r', encoding='utf-8') as f:
             long_character_anno = f.readlines()
             new_annos += long_character_anno
 
@@ -124,8 +124,8 @@ if __name__ == "__main__":
         hps['train']['log_interval'] = 10
         hps['train']['eval_interval'] = 100
         hps['train']['batch_size'] = 16
-        hps['data']['training_files'] = "final_annotation_train.txt"
-        hps['data']['validation_files'] = "final_annotation_val.txt"
+        hps['data']['training_files'] = "/content/drive/MyDrive/final_annotation_train.txt"
+        hps['data']['validation_files'] = "/content/drive/MyDrive/final_annotation_val.txt"
         # save modified config
         with open("./configs/modified_finetune_speaker.json", 'w', encoding='utf-8') as f:
             json.dump(hps, f, indent=2)
